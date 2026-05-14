@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://otakutienda.com/cdn/shop/files/imagotipo_50ae6b9a-5972-4e6a-904b-890b470409f4.png?v=1638233713&width=600">
+    <title>Nakama Toys</title>
+</head>
+<body class="carrito-body">
+    <h1>🛒 Carrito de Compras</h1>
+
+<button class="volver" onclick="window.location.href='index.html'">
+    ⬅ Volver
+</button>
+
+<div id="carritoContainer"></div>
+
+<script>
+let carrito = JSON.parse(localStorage.getItem("carritoFiguras")) || [];
+
+let container = document.getElementById("carritoContainer");
+
+// 🔥 MOSTRAR CARRITO
+mostrarCarrito();
+
+function mostrarCarrito() {
+
+    container.innerHTML = "";
+
+    if (carrito.length === 0) {
+
+        container.innerHTML = "<h2>Tu carrito está vacío</h2>";
+        return;
+    }
+
+    carrito.forEach((item, index) => {
+
+        let card = document.createElement("div");
+        card.classList.add("card");
+
+        card.innerHTML = `
+            <img src="${item.img}">
+            <h2>${item.nombre}</h2>
+            <p>Cantidad agregada: ${item.cantidad}</p>
+
+            <button onclick="eliminarFigura(${index})">
+                ❌ Eliminar
+            </button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// ❌ ELIMINAR FIGURA
+function eliminarFigura(index) {
+
+    // restar cantidad del total
+    let total = parseInt(localStorage.getItem("carrito")) || 0;
+
+    total -= carrito[index].cantidad;
+
+    if (total < 0) total = 0;
+
+    localStorage.setItem("carrito", total);
+
+    // eliminar figura
+    carrito.splice(index, 1);
+
+    // guardar carrito actualizado
+    localStorage.setItem("carritoFiguras", JSON.stringify(carrito));
+
+    // volver a dibujar
+    mostrarCarrito();
+}
+
+</script>
+
+</body>
+</html>

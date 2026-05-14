@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://otakutienda.com/cdn/shop/files/imagotipo_50ae6b9a-5972-4e6a-904b-890b470409f4.png?v=1638233713&width=600">
+    <title>Nakama Toys</title>
+</head>
+<body>
+    <div class="cart-icon" onclick="window.location.href='carrito.html'">
+    🛒 <span id="cartCount">0</span>
+    </div>
+<div class="container">
+
+    <!-- IZQUIERDA -->
+    <div class="left">
+
+        <!-- INPUT 1 -->
+        <label>Tipo de figura:</label>
+        <select id="tipo">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="anime">Anime</option>
+            <option value="juego">Juegos</option>
+            <option value="pelicula">Películas</option>
+        </select>
+
+        <!-- INPUT 2 -->
+        <label>Nombre:</label>
+        <select id="nombre">
+            <option value="">-- Primero selecciona tipo --</option>
+        </select>
+
+        <!-- BOTÓN -->
+        <button onclick="continuar()">Siguiente</button>
+
+    </div>
+
+    <!-- DERECHA -->
+    <div class="right">
+        <img id="preview" src="" alt="Vista previa">
+    </div>
+
+</div>
+<div class="comentarios-container">
+
+    <div class="comentario-boton">
+        💬
+    </div>
+
+    <div class="comentarios-box">
+
+        <h3>Comentarios</h3>
+
+        <div class="comentarios-lista" id="comentariosLista">
+
+            <div class="comentario"></div>
+
+        </div>
+        <textarea id="comentarioInput" placeholder="Escribe un Comentario..."></textarea>
+        <button onclick="agregarComentario()">
+            Enviar
+        </button>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
