@@ -12,7 +12,6 @@
     height: 100vh;
 }
 
-/* CONTENEDOR CENTRADO */
 .container {
     display: flex;
     width: 80%;
@@ -24,7 +23,6 @@
     overflow: hidden;
 }
 
-/* LADO IZQUIERDO */
 .left {
     width: 45%;
     padding: 30px;
@@ -34,7 +32,7 @@
     justify-content: center;
 }
 
-/* LADO DERECHO */
+
 .right {
     width: 55%;
     display: flex;
@@ -42,7 +40,6 @@
     justify-content: center;
 }
 
-/* IMAGEN */
 #preview {
     max-width: 70%;
     max-height: 70%;
@@ -51,7 +48,6 @@
     transition: 0.3s;
 }
 
-/* SELECT MÁS PEQUEÑO */
 select {
     padding: 8px 12px;
     border-radius: 50px;
@@ -62,7 +58,6 @@ select {
     transition: 0.3s;
 }
 
-/* BOTÓN */
 button {
     padding: 10px;
     border: none;
@@ -78,7 +73,6 @@ button:hover {
     background: #666;
 }
 
-/* COLORES DINÁMICOS */
 .anime { border-color: #ff4df2 !important; }
 .juego { border-color: #00ffcc !important; }
 .pelicula { border-color: #ff9900 !important; }
@@ -297,7 +291,6 @@ button:hover {
     z-index: 9999;
 }
 
-/* Botón más pequeño */
 .comentario-boton {
     width: 45px;
     height: 45px;
@@ -320,7 +313,6 @@ button:hover {
     background: #444;
 }
 
-/* Caja */
 .comentarios-box {
     position: absolute;
     bottom: 55px;
@@ -347,7 +339,6 @@ button:hover {
     flex-direction: column;
 }
 
-/* Mostrar */
 .comentarios-container:hover .comentarios-box {
     opacity: 1;
     visibility: visible;
@@ -359,14 +350,12 @@ button:hover {
     font-size: 15px;
 }
 
-/* Área scrolleable */
 .comentarios-lista {
     flex: 1;
     overflow-y: auto;
     padding-right: 5px;
 }
 
-/* Scroll personalizado */
 .comentarios-lista::-webkit-scrollbar {
     width: 6px;
 }
@@ -376,7 +365,6 @@ button:hover {
     border-radius: 10px;
 }
 
-/* Comentarios */
 .comentario {
     background: #2a2a2a;
     padding: 7px;
@@ -389,7 +377,6 @@ button:hover {
     margin: 4px 0 0;
 }
 
-/* Input pequeño */
 .comentarios-box textarea {
     width: 95%;
     height: 45px;
@@ -405,7 +392,6 @@ button:hover {
 
     font-size: 12px;
 }
-
 
 .comentarios-box button {
     margin-top: 6px;

@@ -1,4 +1,3 @@
-// DATOS
 const datos = {
     anime: [
         {nombre: "one piece", img: "https://areajugones.sport.es/wp-content/uploads/2019/09/OnePiecePoster.jpg"},
@@ -17,14 +16,12 @@ const datos = {
     ]
 };
 
-// REFERENCIAS
 const tipo = document.getElementById("tipo");
 const nombre = document.getElementById("nombre");
 const preview = document.getElementById("preview");
 const imagenDefault = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGHrVk03KkK6Nqym8aswZ7wQZ35MB6-KN16g&s";
 preview.src = imagenDefault;
 
-// CAMBIO DE TIPO
 tipo.addEventListener("change", () => {
 
     nombre.innerHTML = '<option value="">-- Selecciona --</option>';
@@ -36,11 +33,9 @@ tipo.addEventListener("change", () => {
         return;
     }
 
-    // COLOR DINÁMICO
     tipo.classList.add(tipo.value);
     nombre.classList.add(tipo.value);
 
-    // CARGAR OPCIONES
     datos[tipo.value].forEach((item, index) => {
     let option = document.createElement("option");
     option.value = index; 
@@ -49,10 +44,8 @@ tipo.addEventListener("change", () => {
     });
 });
 
-// CAMBIO DE NOMBRE
 nombre.addEventListener("change", () => {
 
-    // 🔥 si no hay nada seleccionado
     if (!tipo.value || nombre.value === "") {
         preview.src = imagenDefault;
         return;
@@ -62,7 +55,7 @@ nombre.addEventListener("change", () => {
 
     preview.src = seleccion.img;
 });
-// VALIDACIÓN
+
 function continuar() {
 
     if (!tipo.value) {
@@ -75,7 +68,6 @@ function continuar() {
         return;
     }
 
-    // pasar datos por URL
     window.location.href = `productos.html?tipo=${tipo.value}&nombre=${nombre.value}`;
 }
 let carrito = localStorage.getItem("carrito");
@@ -105,6 +97,5 @@ function agregarComentario() {
 
     input.value = "";
 
-    /* Baja automáticamente */
     lista.scrollTop = lista.scrollHeight;
 }

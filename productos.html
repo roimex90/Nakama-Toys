@@ -27,7 +27,7 @@
 
 <script>
 
-// 📦 DATOS (3 figuras por selección)
+
 const datos = {
     anime: [
         {
@@ -111,14 +111,12 @@ const datos = {
     ]
 };
 
-// 🧠 LEER DATOS DESDE URL
 const params = new URLSearchParams(window.location.search);
 const tipo = params.get("tipo");
 const nombreIndex = params.get("nombre");
 
 let total = 0;
 
-// 🔥 GENERAR CUADROS
 if (tipo && nombreIndex !== null) {
 
     let seleccion = datos[tipo][nombreIndex];
@@ -161,7 +159,6 @@ function restar(i) {
     if (val > 0) input.value = val - 1;
 }
 
-// 🛒 AGREGAR AL CARRITO
 function agregar(i) {
 
     let cantidad = parseInt(document.getElementById(`cant-${i}`).value);
